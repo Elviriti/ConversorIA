@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Converter - Unidad 20</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding: 50px; background: #f4f4f9; }
+        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        input, select, button { margin: 10px 0; padding: 10px; width: 100%; display: block; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Conversor de Temperatura</h2>
+        <p><i>Lógica asistida por IA para precisión de fórmulas.</i></p>
+        <input type="number" id="inputTemp" placeholder="Introduce valor">
+        <select id="type">
+            <option value="c2f">Celsius a Fahrenheit</option>
+            <option value="f2c">Fahrenheit a Celsius</option>
+        </select>
+        <button onclick="convertir()">Convertir</button>
+        <h3 id="resultText">Resultado: -</h3>
+    </div>
+
+    <script>
+        // Función generada con asistencia de IA para manejo de precisión
+        function convertir() {
+            const val = parseFloat(document.getElementById('inputTemp').value);
+            const type = document.getElementById('type').value;
+            let result;
+
+            if (isNaN(val)) {
+                alert("Por favor, ingresa un número válido");
+                return;
+            }
+
+            // Fórmulas matemáticas validadas
+            if (type === "c2f") {
+                result = (val * 9/5) + 32;
+            } else {
+                result = (val - 32) * 5/9;
+            }
+
+            document.getElementById('resultText').innerText = `Resultado: ${result.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
